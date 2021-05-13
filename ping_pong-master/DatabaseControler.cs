@@ -128,7 +128,7 @@ namespace pong
             connection.Open();
             try
             {
-                string query = "delete * from choivoimay where MAC='" + MAC + "'";
+                string query = "delete  from choivoimay where MAC='" + MAC + "'";
                 cmd.CommandText = query;
                 cmd.ExecuteNonQuery();
             }
