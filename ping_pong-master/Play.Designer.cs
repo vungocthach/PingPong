@@ -53,9 +53,10 @@ namespace pong
             this.points1.AutoSize = true;
             this.points1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.points1.ForeColor = System.Drawing.Color.Black;
-            this.points1.Location = new System.Drawing.Point(12, 475);
+            this.points1.Location = new System.Drawing.Point(16, 585);
+            this.points1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.points1.Name = "points1";
-            this.points1.Size = new System.Drawing.Size(73, 17);
+            this.points1.Size = new System.Drawing.Size(84, 20);
             this.points1.TabIndex = 3;
             this.points1.Text = "Player: 0";
             this.points1.Click += new System.EventHandler(this.points1_Click);
@@ -65,19 +66,22 @@ namespace pong
             this.points2.AutoSize = true;
             this.points2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.points2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.points2.Location = new System.Drawing.Point(12, 8);
+            this.points2.Location = new System.Drawing.Point(16, 10);
+            this.points2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.points2.Name = "points2";
-            this.points2.Size = new System.Drawing.Size(58, 17);
+            this.points2.Size = new System.Drawing.Size(69, 20);
             this.points2.TabIndex = 4;
             this.points2.Text = "CPU: 0";
+            this.points2.Click += new System.EventHandler(this.points2_Click);
             // 
             // pause_txt
             // 
             this.pause_txt.AutoSize = true;
             this.pause_txt.ForeColor = System.Drawing.Color.White;
-            this.pause_txt.Location = new System.Drawing.Point(126, 250);
+            this.pause_txt.Location = new System.Drawing.Point(168, 308);
+            this.pause_txt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.pause_txt.Name = "pause_txt";
-            this.pause_txt.Size = new System.Drawing.Size(43, 13);
+            this.pause_txt.Size = new System.Drawing.Size(56, 17);
             this.pause_txt.TabIndex = 5;
             this.pause_txt.Text = "Paused";
             this.pause_txt.Click += new System.EventHandler(this.pause_txt_Click);
@@ -85,9 +89,10 @@ namespace pong
             // paddle
             // 
             this.paddle.BackColor = System.Drawing.Color.Black;
-            this.paddle.Location = new System.Drawing.Point(12, 441);
+            this.paddle.Location = new System.Drawing.Point(16, 543);
+            this.paddle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.paddle.Name = "paddle";
-            this.paddle.Size = new System.Drawing.Size(200, 20);
+            this.paddle.Size = new System.Drawing.Size(267, 25);
             this.paddle.TabIndex = 6;
             this.paddle.TabStop = false;
             this.paddle.Click += new System.EventHandler(this.paddle_Click);
@@ -95,9 +100,10 @@ namespace pong
             // paddle2
             // 
             this.paddle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.paddle2.Location = new System.Drawing.Point(12, 28);
+            this.paddle2.Location = new System.Drawing.Point(16, 34);
+            this.paddle2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.paddle2.Name = "paddle2";
-            this.paddle2.Size = new System.Drawing.Size(200, 20);
+            this.paddle2.Size = new System.Drawing.Size(267, 25);
             this.paddle2.TabIndex = 7;
             this.paddle2.TabStop = false;
             this.paddle2.Click += new System.EventHandler(this.paddle2_Click);
@@ -105,19 +111,20 @@ namespace pong
             // ball
             // 
             this.ball.BackColor = System.Drawing.Color.Yellow;
-            this.ball.Location = new System.Drawing.Point(81, 205);
+            this.ball.Location = new System.Drawing.Point(108, 252);
+            this.ball.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ball.Name = "ball";
-            this.ball.Size = new System.Drawing.Size(23, 23);
+            this.ball.Size = new System.Drawing.Size(31, 28);
             this.ball.TabIndex = 8;
             this.ball.TabStop = false;
             this.ball.Click += new System.EventHandler(this.ball_Click);
             // 
             // Play
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(962, 501);
+            this.ClientSize = new System.Drawing.Size(1283, 617);
             this.Controls.Add(this.paddle2);
             this.Controls.Add(this.paddle);
             this.Controls.Add(this.pause_txt);
@@ -126,6 +133,7 @@ namespace pong
             this.Controls.Add(this.ball);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Play";
             this.Text = "Playground";
             this.Load += new System.EventHandler(this.Play_Load);

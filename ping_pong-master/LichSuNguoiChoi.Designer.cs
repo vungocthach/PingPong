@@ -32,8 +32,8 @@ namespace pong
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LichSuNguoiChoi));
             this.label1 = new System.Windows.Forms.Label();
             this.quaylai = new System.Windows.Forms.Button();
-            this.lichsu = new System.Windows.Forms.Label();
             this.xoalichsu = new System.Windows.Forms.Button();
+            this.lichsu = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -62,21 +62,6 @@ namespace pong
             this.quaylai.UseVisualStyleBackColor = false;
             this.quaylai.Click += new System.EventHandler(this.button1_Click);
             // 
-            // lichsu
-            // 
-            this.lichsu.BackColor = System.Drawing.Color.Transparent;
-            this.lichsu.Font = new System.Drawing.Font("Nueva-BoldExtended", 25F, System.Drawing.FontStyle.Bold);
-            this.lichsu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lichsu.Location = new System.Drawing.Point(58, 76);
-            this.lichsu.Name = "lichsu";
-            this.lichsu.Size = new System.Drawing.Size(497, 247);
-            this.lichsu.TabIndex = 2;
-            this.lichsu.Text = "Time: Point:";
-            this.lichsu.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lichsu.UseCompatibleTextRendering = true;
-            this.lichsu.UseWaitCursor = true;
-            this.lichsu.Click += new System.EventHandler(this.lichsu_Click);
-            // 
             // xoalichsu
             // 
             this.xoalichsu.Font = new System.Drawing.Font("Nueva-BoldExtended", 8.25F);
@@ -88,6 +73,18 @@ namespace pong
             this.xoalichsu.UseVisualStyleBackColor = true;
             this.xoalichsu.Click += new System.EventHandler(this.xoalichsu_Click);
             // 
+            // lichsu
+            // 
+            this.lichsu.BackColor = System.Drawing.Color.Transparent;
+            this.lichsu.Font = new System.Drawing.Font("Nueva-BoldExtended", 13F, System.Drawing.FontStyle.Bold);
+            this.lichsu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lichsu.Location = new System.Drawing.Point(60, 81);
+            this.lichsu.Name = "lichsu";
+            this.lichsu.Size = new System.Drawing.Size(472, 211);
+            this.lichsu.TabIndex = 4;
+            this.lichsu.Text = "Time Point";
+            this.lichsu.Click += new System.EventHandler(this.lichsu_Click_1);
+            // 
             // LichSuNguoiChoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -95,10 +92,10 @@ namespace pong
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(597, 349);
+            this.Controls.Add(this.lichsu);
             this.Controls.Add(this.xoalichsu);
             this.Controls.Add(this.quaylai);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lichsu);
             this.DoubleBuffered = true;
             this.Name = "LichSuNguoiChoi";
             this.Text = "LichSuNguoiChoi";
@@ -111,7 +108,7 @@ namespace pong
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button quaylai;
-        private System.Windows.Forms.Label lichsu;
         private System.Windows.Forms.Button xoalichsu;
+        private System.Windows.Forms.Label lichsu;
     }
 }

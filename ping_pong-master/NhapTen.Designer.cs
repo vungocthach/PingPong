@@ -98,6 +98,7 @@ namespace pong
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NhapTen";
             this.Text = "NhapTen";
+            this.Load += new System.EventHandler(this.NhapTen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

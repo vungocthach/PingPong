@@ -43,10 +43,16 @@ namespace pong
         private void xoalichsu_Click(object sender, EventArgs e)
         {
             DatabaseControler.Instance.xoalichsu(AppControler.MAC);
+            DatabaseControler.Instance.updateHighscore("0", AppControler.MAC);
             MessageBox.Show("Đã xóa lịch sử thành công");
             GiaoDienDaDangKi f =new  GiaoDienDaDangKi();
             f.Show();
             this.Close();
+        }
+
+        private void lichsu_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

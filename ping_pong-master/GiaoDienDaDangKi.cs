@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Media;
 
 namespace pong
 {
@@ -22,6 +23,7 @@ namespace pong
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Console.Beep();
             Choivoimay f = new Choivoimay();
             f.Show();
             this.Close();
@@ -29,6 +31,7 @@ namespace pong
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Console.Beep();
             Huongdan f = new Huongdan();
             f.Show();
         }
@@ -45,6 +48,7 @@ namespace pong
 
         private void button4_Click(object sender, EventArgs e)
         {
+            Console.Beep();
             Application.Exit();
         }
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -54,10 +58,12 @@ namespace pong
 
         private void GiaoDien_Load(object sender, EventArgs e)
         {
+           
         }
 
         private void button3_Click_1(object sender, EventArgs e)
         {
+            Console.Beep();
             NhapTen f = new NhapTen();
             f.Show();
         }
@@ -71,6 +77,7 @@ namespace pong
         }
         private void button3_Click_2(object sender, EventArgs e)
         {
+            Console.Beep();
             NhapTen f = new NhapTen();
             f.Show();
             this.Close();
@@ -86,6 +93,31 @@ namespace pong
             LichSuNguoiChoi f = new LichSuNguoiChoi();
             f.Show();
             this.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if(button6.Text == "Tắt nhạc")
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+                player.SoundLocation = "FILE_20210513_221817_MusicGamePingpong.wav";
+                player.Stop();
+                button6.Text = "Mở nhạc";
+            }
+            else
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+                player.SoundLocation = "FILE_20210513_221817_MusicGamePingpong.wav";
+                player.PlayLooping();
+                button6.Text = "Tắt nhạc";
+            }
+            ///Music f = new Music();
+            //f.Show();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

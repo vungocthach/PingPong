@@ -40,9 +40,24 @@ namespace pong
             }
             return DanhSachMAC;
         }
-        private static void LayThoiGian()
+        private static string time;
+        public static string TIME
         {
-            string time=DateTime.Now.ToString("dd/mm/yyyy");
+            get
+            {
+                if (time == null)
+                {
+                    time = LayThoiGian ();
+                }
+                return time;
+            }
+
+        }
+        private static string LayThoiGian()
+        {
+            string time="";
+            time = DateTime.Now.ToString();
+            return time;
         }
         
     }

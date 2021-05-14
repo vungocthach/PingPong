@@ -31,13 +31,13 @@ namespace pong
                 return instance;
             }
         }
-        public void insert(string value,string cot)// them ten nguoi choi vào cột người chơi
+        public void insert(string value,string cot,string bang)// them ten nguoi choi vào cột người chơi
         {
             connection.Open();
             try
             {
 
-                string query = "insert into nguoichoi ("+cot+") values ('"+value+"')";
+                string query = "insert into +"+bang+"("+cot+") values ('"+value+"')";
                 cmd.CommandText = query;
                 cmd.ExecuteNonQuery();
             }
@@ -47,7 +47,22 @@ namespace pong
             }
             connection.Close();
         }
+        public void insertpoint (int point,string time, string MAC)
+        {
+            connection.Open();
+            try
+            {
 
+                string query = "insert into choivoimay(MAC,thoigian,POINT) values('"+MAC+ "','" + time +"',"+point+")";
+                cmd.CommandText = query;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            connection.Close();
+        }
 
 
         public void update(string value,string MAC)//update ten nguoi dung
@@ -113,7 +128,7 @@ namespace pong
                 SqlDataReader dataReader = cmd.ExecuteReader();
                 while(dataReader.Read())
                 {
-                    res=res + "Time: "+ dataReader[0].ToString() + "       Point: "+dataReader[1].ToString()+"\n";
+                    res=res+dataReader[0].ToString() +"         "+ dataReader[1].ToString()+"\n";
                 }
             }
             catch(Exception e)

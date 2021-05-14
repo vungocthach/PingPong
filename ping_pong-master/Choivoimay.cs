@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Media;
 
 namespace pong
 {
@@ -31,8 +32,10 @@ namespace pong
         }
 
         private void timer1_Tick(object sender, EventArgs e)
-        {           
-            if(!paused)
+        {
+            System.Media.SoundPlayer player2 = new System.Media.SoundPlayer();
+            player2.SoundLocation = "FILE_20210513_234251_Game over.wav";
+            if (!paused)
             { 
                 thanhngang.Left=Cursor.Position.X - (thanhngang.Width/2); // cài con trỏ nằm ở giữa thanh ngang
                 pause_label.Location = new Point((int)playground.Width / 2 - pause_label.Width / 2, (int)playground.Height / 2 - pause_label.Height / 2);// vị trí chữ Pause sẽ nằm giữa màn hình
@@ -42,6 +45,7 @@ namespace pong
                 Ball.Top += speed_top;
                 if (Ball.Bounds.IntersectsWith(thanhngang.Bounds)) // nếu thanh ngang chạm bóng
                 {
+                   
                     speed_top *= -1;
                     speed_left = Math.Abs(MousePosition.X - lastx);       
                     if (speed_left > 4)
@@ -73,7 +77,7 @@ namespace pong
                     Random r = new Random();
                     playground.BackColor = Color.FromArgb(r.Next(150, 255), r.Next(150, 255), r.Next(150, 255));
                     label2.Text = point.ToString();
-                    DoubleBuffered = true;
+                   
                 }
 
                 if (Ball.Left <= playground.Left)
@@ -90,13 +94,18 @@ namespace pong
                 }
                 if (Ball.Bottom >= playground.Bottom)
                 {
+                    DatabaseControler.Instance.insertpoint(point, AppControler.TIME, AppControler.MAC);
                     if (Int32.Parse(DatabaseControler.Instance.select("highscore", AppControler.MAC)) < point)
                     {
                         DatabaseControler.Instance.updateHighscore(point.ToString(), AppControler.MAC);
                     }
+
+                    player2.Play();                    
                     timer1.Enabled = false;// end game
                     gameover.Visible = true; // hiện chữ game over
+                   
                 }
+                
             }
            
         }
@@ -106,14 +115,18 @@ namespace pong
 
         private void Choivoimay_KeyDown(object sender, KeyEventArgs e)
         {
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+            player.SoundLocation = "FILE_20210513_221817_MusicGamePingpong.wav";
             if (e.KeyCode == Keys.Escape)
             {
-                GiaoDienDaDangKi f = new GiaoDienDaDangKi();
+                GiaoDienDaDangKi f = new GiaoDienDaDangKi();                
+                player.PlayLooping();
                 f.Show();
                 this.Close(); // nhấn esc để out khỏi màn hình
             }
             if (e.KeyCode == Keys.F1)
             {
+                player.PlayLooping();
                 Random r = new Random();
                 Ball.Top = r.Next(10, 200);
                 Ball.Left = r.Next(10,800);

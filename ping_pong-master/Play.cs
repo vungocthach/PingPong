@@ -264,5 +264,10 @@ namespace pong
         {
 
         }
+
+        private void points2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

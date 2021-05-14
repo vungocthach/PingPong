@@ -42,5 +42,10 @@ namespace pong
             f.Show();
             this.Close();
         }
+
+        private void NhapTen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
